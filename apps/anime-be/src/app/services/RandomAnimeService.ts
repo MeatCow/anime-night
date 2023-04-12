@@ -1,11 +1,17 @@
-import { GenreResponse } from '@anime-night/models';
+import { GenreList, GenreResponse } from '@anime-night/models';
+import { createListRequest } from '@anime-night/helpers';
 import { Injectable } from '@nestjs/common';
 import { GenreService } from './GenreService';
+import { HttpService } from '@nestjs/axios';
 
 @Injectable()
 export class RandomAnimeService implements GenreService {
+  constructor(private readonly http: HttpService) {}
+
   findByName(name: string): GenreResponse[] {
-    console.log(`performing lookup for ${name} in Random Anime`);
-    return [{ count: 15, genre: 'Adventure' }];
+    return GenreList.map((genre) => ({
+      genre: genre,
+      count: Math.floor(Math.random() * 15) + 1,
+    }));
   }
 }

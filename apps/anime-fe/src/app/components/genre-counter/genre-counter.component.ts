@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-genre-counter',
+  selector: 'anime-night-genre-counter',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './genre-counter.component.html',
