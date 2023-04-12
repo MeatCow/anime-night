@@ -1,0 +1,50 @@
+{
+  "name": "anime-be",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/anime-be/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/anime-be",
+        "main": "apps/anime-be/src/main.ts",
+        "tsConfig": "apps/anime-be/tsconfig.app.json",
+        "assets": ["apps/anime-be/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/anime-be/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "anime-be:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "anime-be:build:development"
+        },
+        "production": {
+          "buildTarget": "anime-be:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/anime-be/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
