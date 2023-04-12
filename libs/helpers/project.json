@@ -1,0 +1,26 @@
+{
+  "name": "helpers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/helpers/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/helpers",
+        "main": "libs/helpers/src/index.ts",
+        "tsConfig": "libs/helpers/tsconfig.lib.json",
+        "assets": ["libs/helpers/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/helpers/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

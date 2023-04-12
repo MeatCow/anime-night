@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { GenreResponse } from '@anime-night/models';
 
 @Injectable({
   providedIn: 'root',
@@ -7,5 +8,5 @@ import { HttpClient } from '@angular/common/http';
 export class AnimeService {
   constructor(private client: HttpClient) {}
 
-  getGenres = (name = '') => this.client.get<any[]>(`/api/${name}`);
+  getGenres = (name = '') => this.client.get<GenreResponse[]>(`/api/${name}`);
 }
