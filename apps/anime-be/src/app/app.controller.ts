@@ -1,13 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { AppService } from './app.service';
+import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
-  @Get()
-  getData() {
-    return this.appService.getData();
+  @Get(':name')
+  getAnimes(@Param('name') name: string) {
+    return [{ genre: name, count: 2 }];
   }
 }

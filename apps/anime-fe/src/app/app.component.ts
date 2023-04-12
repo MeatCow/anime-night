@@ -1,13 +1,10 @@
-import { Component } from "@angular/core";
-import { NxWelcomeComponent } from "./nx-welcome.component";
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
+  selector: 'anime-night-root',
   standalone: true,
-  imports: [NxWelcomeComponent],
-  selector: "anime-night-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
-  title = "anime-fe";
-}
+export class AppComponent {}
