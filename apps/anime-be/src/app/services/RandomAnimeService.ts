@@ -8,7 +8,7 @@ import { createListRequest } from '@anime-night/helpers';
 import { Injectable } from '@nestjs/common';
 import { GenreService } from './GenreService';
 import { HttpService } from '@nestjs/axios';
-import { Observable, forkJoin, map, retry, tap } from 'rxjs';
+import { Observable, forkJoin, map, retry } from 'rxjs';
 
 @Injectable()
 export class RandomAnimeService implements GenreService {
@@ -37,11 +37,7 @@ export class RandomAnimeService implements GenreService {
         createListRequest(genre, username)
       )
       .pipe(
-        tap(
-          (a) => console.log(a),
-          (a) => console.log(a)
-        ),
-        retry({ count: 3, delay: 500 }),
+        retry({ count: 3, delay: 1500 }),
         map((res) => res.data.resultsTotal)
       );
   };
