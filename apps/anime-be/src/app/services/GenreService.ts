@@ -1,7 +1,12 @@
-import { GenreResponse } from '@anime-night/models';
+import { Genre, GenreResponse } from '@anime-night/models';
 import { Injectable } from '@nestjs/common';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export abstract class GenreService {
-  abstract findByName(name: string): GenreResponse[];
+  abstract allByUsername(username: string): Observable<GenreResponse[]>;
+  abstract singleByUsername(
+    username: string,
+    genre: Genre
+  ): Observable<GenreResponse>;
 }

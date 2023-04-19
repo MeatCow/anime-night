@@ -1,5 +1,4 @@
 export const createListRequest = (genre: string, username: string) => ({
-  method: 'POST',
   url: 'https://www.randomanime.org/api/list/custom',
   headers: {
     accept: 'application/json, text/plain, */*',
@@ -18,6 +17,8 @@ export const createListRequest = (genre: string, username: string) => ({
     'sec-fetch-site': 'same-origin',
     Referer: 'https://www.randomanime.org/',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
+    'user-agent':
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
   },
   data: `------WebKitFormBoundaryFfjOcu3D9Et37yRL\r\nContent-Disposition: form-data; name="base"\r\n\r\nexternal\r\n------WebKitFormBoundaryFfjOcu3D9Et37yRL\r\nContent-Disposition: form-data; name=\"included[]\"\r\n\r\n${genre}\r\n------WebKitFormBoundaryFfjOcu3D9Et37yRL\r\nContent-Disposition: form-data; name=external[site]"\r\n\r\nAniList\r\n------WebKitFormBoundaryFfjOcu3D9Et37yRL\r\nContent-Disposition: form-data; name=\"external[list]\"\r\n\r\n\r\n------WebKitFormBoundaryFfjOcu3D9Et37yRL\r\nContent-Disposition: form-data; name=\"external[onlyMyAnime]\"\r\n\r\nfalse\r\n------WebKitFormBoundaryFfjOcu3D9Et37yRL\r\nContent-Disposition: form-data; name="external[username]"\r\n\r\n${username}\r\n------WebKitFormBoundaryFfjOcu3D9Et37yRL--\r\n`,
 });

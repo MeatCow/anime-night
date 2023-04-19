@@ -1,1 +1,2 @@
-export * from './lib/models';
+export * from './lib/genre.models';
+export * from './lib/random-anime.models';
