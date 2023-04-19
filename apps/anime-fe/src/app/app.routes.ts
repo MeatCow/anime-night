@@ -1,13 +1,13 @@
-import { Route } from '@angular/router';
-import IndexComponent from './routes/index.component';
+import { Route } from "@angular/router";
+import IndexComponent from "./routes/index.component";
 
 export const appRoutes: Route[] = [
   {
-    path: '',
+    path: "",
     component: IndexComponent,
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: "**",
+    redirectTo: "",
   },
 ];

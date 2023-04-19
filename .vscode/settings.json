@@ -1,0 +1,8 @@
+{
+  "vsicons.presets.angular": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.rulers": [{ "column": 80 }, { "column": 120 }]
+}

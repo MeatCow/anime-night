@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 .angular
+apps/anime-be/src/app/services/settings.json

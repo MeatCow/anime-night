@@ -1,4 +1,4 @@
-import { Genre } from './genre.models';
+import { Genre } from "./genre.models";
 
 export interface URLResponse {
   status: number;
